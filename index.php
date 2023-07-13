@@ -21,17 +21,15 @@
             // $read = false;
 
             if ($read) {
-                $message = 'You have read' . ' ' . $name;       // SINGLE quotes and CONCATENATE
-                // $message = "You have read $name";
+                $message = "You have read $name";
             } else {
-                $message = "You have NOT read $name";           // DOUBLE quotes WITHOUT concatenate and VARIABLE
+                $message = "You have NOT read $name";
             }
 
         ?>
 
     <h1>
-        <?php //echo $message; ?>
-        <?= $message ?>             <!-- semicolon is optional here. -->
+        <?= $message ?>
     </h1>
     
 </body>
