@@ -19,22 +19,6 @@
         <?php foreach ($books as $book) : ?>
             <li><?= $book ?></li>
         <?php endforeach ?> 
-
-        <?php 
-            // foreach ($books as $book) {
-            //     // echo "<li>$book™</li>";    // doesnot work
-            //     // echo "<li>$book ™</li>";    // space cha vane, works. 
-            //     // echo "<li>{$book}™</li>";    //  works without space, but put inside curly brace. 
-                
-            //     echo "<li>$book</li>";
-            //     // echo "<li>" . $book ."</li>";
-            // }
-        
-        ?>
-
-        <!-- <li>book 1</li>
-        <li>book 2</li>
-        <li>book 3</li> -->
     </ul>
 </body>
 </html>
