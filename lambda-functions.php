@@ -27,13 +27,14 @@
         ];
 
         // $filterByAuthor = function ($books, $author) {    // anonymous function
-
-        function filter($items, $key, $value) {  // named function
+        // function filter($items, $key, $value) {  // named function
+        
+        function filter($items, $fn) {
             $filteredItems = [];
 
             foreach ($items as $item) {
-                // if ($item['author'] === $author) {
-                if ($item[$key] === $value) {
+                // if ($item[$key] === $value) {
+                if ($fn($item)) {
                     $filteredItems[] = $item;
                 }
             }
@@ -41,9 +42,12 @@
             return $filteredItems;
         }
 
-        // namedfunction(array, key, value);
-        // $filteredBooks = filter($books, 'author', 'author 2');    // normal function call.
-        $filteredBooks = filter($books, 'releaseYear', 2010);  
+        // $filteredBooks = filter($books, 'releaseYear', 2010);  
+        $filteredBooks = filter($books, function ($book) {   // passing lambda or anonymous function
+            return $book['releaseYear'] >= 2000;
+            // return $book['releaseYear'] < 2000;
+        });  
+
 
     ?>
     
