@@ -26,9 +26,9 @@
             ]
         ];
 
-        // function filterByAuthor($books, $author) {  // named function
+        // $filterByAuthor = function ($books, $author) {    // anonymous function
 
-        $filterByAuthor = function ($books, $author) {    // anonymous function
+        function filterByAuthor($books, $author) {  // named function
             $filteredBooks = [];
 
             foreach ($books as $book) {
@@ -38,10 +38,9 @@
             }
 
             return $filteredBooks;
-        };  // semicolon to end Lambda function.
+        }
 
-        $filteredBooks = $filterByAuthor($books, 'author 2');   // variable $filterByAuthor, arguments passed to a variable $filterByAuthor, to anonymous fxn.
-                                                                // (closure or Lamda function or Anonymous function) is called using the variable’s name, $filterByAuthor.
+        $filteredBooks = filterByAuthor($books, 'author 2');    // normal function call.
 
     ?>
     
