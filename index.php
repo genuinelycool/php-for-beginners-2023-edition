@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Demo</title>
-    <style>
-        body {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-        }
-    </style>
-</head>
-<body>
+<?php
 
-        <?php
-            $name = "Dark Matter";
-            $read = true;
-            // $read = false;
+$books = [
+    [
+        'name' => 'book 1',
+        'author' => 'author 1',
+        'releaseYear' => 1968,
+        'purchaseUrl' => 'http://example1.com'
+    ],[
+        'name' => 'book 2',
+        'author' => 'author 2',
+        'releaseYear' => 2010,
+        'purchaseUrl' => 'http://example1.com'
+    ],
+    [
+        'name' => 'book 3',
+        'author' => 'author 2',
+        'releaseYear' => 2011,
+        'purchaseUrl' => 'http://example3.com'
+    ]
+];
 
-            if ($read) {
-                $message = "You have read $name";
-            } else {
-                $message = "You have NOT read $name";
-            }
+$filteredBooks = array_filter($books, function ($book) {
+    // return $book['releaseYear'] < 2000;
+    return $book['author'] === 'author 2';
+});  
 
-        ?>
-
-    <h1>
-        <?= $message ?>
-    </h1>
-    
-</body>
-</html>
+require "index.view.php";
