@@ -28,19 +28,22 @@
 
         // $filterByAuthor = function ($books, $author) {    // anonymous function
 
-        function filterByAuthor($books, $author) {  // named function
-            $filteredBooks = [];
+        function filter($items, $key, $value) {  // named function
+            $filteredItems = [];
 
-            foreach ($books as $book) {
-                if ($book['author'] === $author) {
-                    $filteredBooks[] = $book;
+            foreach ($items as $item) {
+                // if ($item['author'] === $author) {
+                if ($item[$key] === $value) {
+                    $filteredItems[] = $item;
                 }
             }
 
-            return $filteredBooks;
+            return $filteredItems;
         }
 
-        $filteredBooks = filterByAuthor($books, 'author 2');    // normal function call.
+        // namedfunction(array, key, value);
+        // $filteredBooks = filter($books, 'author', 'author 2');    // normal function call.
+        $filteredBooks = filter($books, 'releaseYear', 2010);  
 
     ?>
     
