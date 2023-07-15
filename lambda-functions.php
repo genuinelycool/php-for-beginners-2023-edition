@@ -25,15 +25,11 @@
                 'purchaseUrl' => 'http://example3.com'
             ]
         ];
-
-        // $filterByAuthor = function ($books, $author) {    // anonymous function
-        // function filter($items, $key, $value) {  // named function
         
         function filter($items, $fn) {
             $filteredItems = [];
 
             foreach ($items as $item) {
-                // if ($item[$key] === $value) {
                 if ($fn($item)) {
                     $filteredItems[] = $item;
                 }
@@ -42,10 +38,8 @@
             return $filteredItems;
         }
 
-        // $filteredBooks = filter($books, 'releaseYear', 2010);  
-        $filteredBooks = filter($books, function ($book) {   // passing lambda or anonymous function
-            return $book['releaseYear'] >= 2000;
-            // return $book['releaseYear'] < 2000;
+        $filteredBooks = filter($books, function ($book) {
+            return $book['releaseYear'] < 2000;
         });  
 
 
