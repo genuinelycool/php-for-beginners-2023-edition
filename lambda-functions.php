@@ -26,20 +26,24 @@
             ]
         ];
         
-        function filter($items, $fn) {
-            $filteredItems = [];
+        // function filter($items, $fn) {
+        //     $filteredItems = [];
 
-            foreach ($items as $item) {
-                if ($fn($item)) {
-                    $filteredItems[] = $item;
-                }
-            }
+        //     foreach ($items as $item) {
+        //         if ($fn($item)) {
+        //             $filteredItems[] = $item;
+        //         }
+        //     }
 
-            return $filteredItems;
-        }
+        //     return $filteredItems;
+        // }
 
-        $filteredBooks = filter($books, function ($book) {
-            return $book['releaseYear'] < 2000;
+        // $filteredBooks = filter($books, function ($book) {
+        
+        // php's built in function for working with arrays.
+        $filteredBooks = array_filter($books, function ($book) {
+            // return $book['releaseYear'] < 2000;
+            return $book['author'] === 'author 2';
         });  
 
 
