@@ -2,19 +2,20 @@
 
 require 'functions.php';
 require 'Database.php';
+require 'router.php';
 
-$config = require'config.php';
+// $config = require'config.php';
 
-$db = new Database($config['database']);
+// $db = new Database($config['database']);
 
-$id = $_GET['id'];
+// $id = $_GET['id'];
 
-$query = "select * from posts where id = :id";
+// $query = "select * from posts where id = :id";
 
-$posts = $db->query($query, [':id' => $id])->fetch();
+// $posts = $db->query($query, [':id' => $id])->fetch();
 
-dd($posts);
+// dd($posts);
 
-foreach ($posts as $post) {
-    echo "<li>" . $post['title'] ."</li>";
-}
+// foreach ($posts as $post) {
+//     echo "<li>" . $post['title'] ."</li>";
+// }
