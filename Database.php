@@ -16,13 +16,9 @@ class Database {
 
     public function query($query, $params = [])
     {       
-        // $statement = $this->connection->prepare($query);
-        // $statement->execute($params);
-
         $this->statement = $this->connection->prepare($query);
         $this->statement->execute($params);
 
-        // return $statement;
         return $this;
     }
 
@@ -31,10 +27,8 @@ class Database {
         return $this->statement->fetchAll();
     }
 
-    // public function fetch()
     public function find()
     {
-        // $statement->fetch();
         return $this->statement->fetch();
 
     }
