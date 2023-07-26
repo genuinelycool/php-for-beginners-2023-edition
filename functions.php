@@ -18,3 +18,22 @@ function authorize($condition, $status = Response::FORBIDDEN) {
         abort($status);
     }
 }
+
+// helper function no. 1
+function base_path($path)
+{
+    return BASE_PATH . $path;
+}
+
+// helper function no. 2
+function view($path, $attributes = [])
+{
+    extract($attributes);   // extract()  it accepts an array, and it turns that array into a set of variables, where name of the variable is the key, 
+                            // and the value of the variable is the value associated with the key.
+
+    // dd($foo);
+    // dd($heading);
+                        
+    // return base_path('views/' . $path);     // loads "/views/index.view.php"
+    require base_path('views/' . $path);
+}
