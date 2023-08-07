@@ -12,9 +12,4 @@ $container->bind('Core\Database', function () {
     return new Database($config['database']);
 });
 
-// $db = $container->resolve('Core\Database');
-
-// dd($db);
-// $container->resolve('adafdfdsdsfdfa12');
-
 App::setContainer($container);
